@@ -1,0 +1,42 @@
+<div class="container container-body">
+  <div class="row">
+    <div class="col">
+      <h1>*NgiF</h1>
+
+      <button
+        class="btn btn-outlet-primary block"
+        (click)="mostrarCita = !mostrarCita"
+      >
+        Mostrar/Ocultar
+      </button>
+      <br />
+      <br />
+
+      <div
+        *ngIf="mostrarCita"
+        class="card text-white bg-primary mb-3"
+        style="max-width: 18rem"
+      >
+        <div class="card-body">
+          <p class="card-text">{{ frase.mensaje }}</p>
+          <footer>{{ frase.autor }}</footer>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <div class="col">
+      <h1>*NgFor</h1>
+
+      <ul class="list-gruop">
+        <li
+          *ngFor="let tec of tecnologias; let i = index"
+          class="list-group-item"
+        >
+          {{ i + 1 }}. {{ tec }}
+        </li>
+      </ul>
+      <hr />
+    </div>
+  </div>
+</div>
